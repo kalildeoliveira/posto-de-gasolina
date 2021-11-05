@@ -4,6 +4,7 @@ public class Bomba {
 	private double quantidade=0;
 	private double preco=0;
 	private double litrosVendidos=0;
+	private double total=0;
 
 	// MÉTODO CONSTRUTOR
 	public Bomba() {
@@ -34,26 +35,39 @@ public class Bomba {
 		this.litrosVendidos = litrosVendidos;
 	}
 
-	// MÉTODOS EXTRAS COM GETS E SETS
-	private double valorParaLitros(double valor) {
-		return valor;
-	}
-
-	public boolean abastecerPorLitro(double litros) {
-		return true;
-	}
-
-	public boolean abastecerPorValor(double valor) {
-		return true;
-	}
+	// MÉTODOS EXTRAS 
+//	private double valorParaLitros(double valor) {
+//		return valor;
+//	}
+//
+//	public boolean abastecerPorLitro(double litros) {
+//		return true;
+//	}
+//
+//	public boolean abastecerPorValor(double valor) {
+//		return true;
+//	}
 
 	public double faturamento() {
-		return 0;
+		double quantidadeLitros=getQuantidade();
+		double precoCombustivel = getPreco();
+		double total = quantidadeLitros*precoCombustivel;		
+		return total;
 	}
 
-	// MÉTODO TO STRING 
-	public String toString() {
-		return "Bomba [quantidade=" + quantidade + ", preco=" + preco
-				+ ", litrosVendidos=" + litrosVendidos + "]";
+
+	public double getTotal() {
+		return total;
 	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}
+	
+	// MÉTODO TO STRING 
+		public String toString() {
+			return "Quantidade=" + quantidade 
+					+ ",\n Preco=" + preco
+					+ ",\n Litros Vendidos=" + litrosVendidos;
+		}
 }
